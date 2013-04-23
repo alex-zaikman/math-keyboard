@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+/* 
+**
+** Copyright 2008, The Android Open Source Project
+**
+** Licensed under the Apache License, Version 2.0 (the "License"); 
+** you may not use this file except in compliance with the License. 
+** You may obtain a copy of the License at 
+**
+**     http://www.apache.org/licenses/LICENSE-2.0 
+**
+** Unless required by applicable law or agreed to in writing, software 
+** distributed under the License is distributed on an "AS IS" BASIS, 
+** WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. 
+** See the License for the specific language governing permissions and 
+** limitations under the License.
+*/
+-->
+
+
+
+<Keyboard xmlns:android="http://schemas.android.com/apk/res/android"
+    android:keyWidth="6%p"
+    android:horizontalGap="0px"
+    android:verticalGap="0px"
+    android:keyHeight="@dimen/key_height"
+    >
+
+     <Row>
+        <Key android:keyOutputText="seven" android:keyLabel="7" android:keyEdgeFlags="left"/>
+        <Key android:keyOutputText="eight"  android:keyLabel="8"/>
+        <Key android:keyOutputText="nine" android:keyLabel="9"/> 
+             
+        <Key android:keyOutputText="plus" android:keyLabel="+" android:horizontalGap="3%p"/>
+        <Key android:keyOutputText="minusSign" android:keyLabel="-" />
+                  
+        <Key android:keyOutputText="power" android:codes="1111" android:keyIcon="@drawable/power" android:horizontalGap="3%p"/> <!-- TODO -->
+        
+        <Key android:keyOutputText="smaller" android:keyLabel="&lt;" android:horizontalGap="3%p"/>
+        <Key android:keyOutputText="bigger" android:keyLabel="&gt;"/>  
+            
+        <Key android:keyOutputText="leftParenthesis" android:keyLabel="(" android:horizontalGap="3%p" />
+        <Key android:keyOutputText="leftParenthesis" android:keyLabel=")"/>
+        
+        <Key android:keyOutputText="orthogonal" android:codes="1111" android:keyIcon="@drawable/perpendicular" android:horizontalGap="3%p"/> <!-- TODO -->
+        <Key android:keyOutputText="parallel" android:codes="1111" android:keyIcon="@drawable/parallel"/>  
+        
+        <Key android:keyOutputText="backspace" android:codes="1111" android:keyIcon="@drawable/sym_keyboard_delete" 
+                android:keyEdgeFlags="right" android:horizontalGap="3%p" android:keyWidth="10%p"
+                android:isRepeatable="true"/>
+    </Row> 
+    
+    
+    <Row>
+ 		<Key android:keyOutputText="four" android:keyLabel="4" android:keyEdgeFlags="left"/>
+		<Key android:keyOutputText="five" android:keyLabel="5"/>
+        <Key android:keyOutputText="six" android:keyLabel="6"/>
+        
+        <Key android:keyOutputText="multiplicationX" android:keyLabel="×" android:horizontalGap="3%p"/>
+        <Key android:keyOutputText="division" android:keyLabel="÷" />
+        
+         <Key android:keyOutputText="fraction" android:codes="1111" android:keyIcon="@drawable/fracture" android:horizontalGap="3%p"/> <!-- TODO -->
+         
+        <Key android:keyOutputText="smallerEqual" android:codes="1111" android:keyIcon="@drawable/leq" android:horizontalGap="3%p"/> <!-- TODO -->
+        <Key android:keyOutputText="biggerEqual" android:codes="1111" android:keyIcon="@drawable/geq"/> <!-- TODO --> 
+             
+        <Key android:keyOutputText="leftSquareBracket" android:keyLabel="[" android:horizontalGap="3%p"/>
+        <Key android:keyOutputText="rightSquareBracket" android:keyLabel="]" />
+        
+        <Key android:keyOutputText="angle" android:codes="1111"  android:keyIcon="@drawable/angle" android:horizontalGap="3%p"/> <!-- TODO -->
+        <Key android:keyOutputText="triangle" android:codes="1111" android:keyIcon="@drawable/delta"/> <!-- TODO --> 
+        
+         <Key android:codes="-1" android:keyIcon="@drawable/sym_keyboard_shift" 
+                android:isModifier="true" android:horizontalGap="3%p"
+                android:isSticky="true" android:keyEdgeFlags="right" android:keyWidth="10%p"/>
+    
+    </Row>
+    
+    <Row>
+        <Key android:keyOutputText="one" android:keyLabel="1" android:keyEdgeFlags="left"/>
+        <Key android:keyOutputText="two" android:keyLabel="2"/>
+        <Key android:keyOutputText="three" android:keyLabel="3"/>
+         
+        <Key  android:keyOutputText="equal"  android:keyLabel="=" android:keyWidth="12%p" android:horizontalGap="3%p"/> 
+        
+        <Key android:keyOutputText="percent"  android:keyLabel="%" android:horizontalGap="3%p"/> <!-- TODO -->
+        
+        <Key android:keyOutputText="approximately" android:codes="1111" android:keyIcon="@drawable/approx" android:horizontalGap="3%p"/> 
+        <Key android:keyOutputText="notEqual" android:codes="1111"  android:keyIcon="@drawable/neq"/> <!-- TODO -->
+                
+        <Key android:keyOutputText="celsius"  android:keyLabel="°C" android:horizontalGap="3%p"/><!-- TODO -->
+        <Key android:keyOutputText="fahrenheit"  android:keyLabel="°F" />
+        
+        <Key android:keyOutputText="pi" android:codes="1111" android:keyIcon="@drawable/pie" android:horizontalGap="3%p"/> <!-- TODO -->
+        <Key android:keyOutputText="segment" android:codes="1111" android:keyIcon="@drawable/segment"/> <!-- TODO --> 
+        
+        <Key android:codes="-2" android:keyLabel="ABC" android:keyWidth="10%p" android:horizontalGap="3%p"  android:keyEdgeFlags="right"/> 
+    </Row>
+    
+    
+    <Row  android:rowEdgeFlags="bottom">
+        <Key android:keyOutputText="zero" android:keyLabel="0" android:keyEdgeFlags="left"/>
+        <Key android:keyOutputText="point" android:keyLabel="."/>
+        <Key android:keyOutputText="comma" android:keyLabel=","/>  
+                 
+           
+       
+       <Key android:keyOutputText="remainder" android:keyLabel="R" android:horizontalGap="18%p"/> <!-- TODO -->
+       
+    	
+    	<Key android:keyOutputText="dollar" android:keyLabel="$" android:horizontalGap="18%p"/>
+        <Key android:keyOutputText="cent" android:keyLabel="¢"/>
+        
+        <Key android:keyOutputText="rayRight" android:codes="1111" android:keyIcon="@drawable/ray" android:horizontalGap="3%p"/> <!-- TODO -->
+        <Key android:keyOutputText="rayBoth" android:codes="1111" android:keyIcon="@drawable/line"/> <!-- TODO --> 
+        
+        <Key android:codes="10"  android:keyWidth="10%p" android:horizontalGap="3%p"  android:keyIcon="@drawable/sym_keyboard_return" android:keyEdgeFlags="right" />
+    </Row>
+</Keyboard>
