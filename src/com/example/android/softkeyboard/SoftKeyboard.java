@@ -500,6 +500,7 @@ public class SoftKeyboard extends InputMethodService
     	
     	Log.i ("asz_debugging: ","primaryCode: "+primaryCode);
     	
+    	/*use option code to toggle imf*/
     	if(primaryCode==LatinKeyboardView.KEYCODE_OPTIONS){   		
     		InputMethodManager ime = (InputMethodManager)getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
     		ime.showInputMethodPicker();
