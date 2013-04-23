@@ -498,7 +498,7 @@ public class SoftKeyboard extends InputMethodService
 
     public void onKey(int primaryCode, int[] keyCodes) {
     	
-    	Log.i ("asz_debugging: ","primaryCode: "+primaryCode);
+    	//Log.i ("asz_debugging: ","primaryCode: "+primaryCode);
     	
     	/*use option code to toggle IMF*/
     	if(primaryCode==LatinKeyboardView.KEYCODE_OPTIONS){   		
