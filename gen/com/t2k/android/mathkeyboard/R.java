@@ -5,7 +5,7 @@
  * should not be modified by hand.
  */
 
-package com.example.android.softkeyboard;
+package com.t2k.android.mathkeyboard;
 
 public final class R {
     public static final class attr {

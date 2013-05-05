@@ -14,7 +14,9 @@
  * limitations under the License.
  */
 
-package com.example.android.softkeyboard;
+package com.t2k.android.mathkeyboard;
+
+import com.t2k.android.mathkeyboard.R;
 
 import android.content.Context;
 import android.content.res.Resources;

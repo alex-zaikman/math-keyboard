@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android" 
-        package="com.example.android.softkeyboard" android:versionCode="22">
-        <uses-sdk android:targetSdkVersion="16" android:minSdkVersion="16"/>
-    <application android:label="@string/ime_name">
-        <service android:name="SoftKeyboard"
+        package="com.t2k.android.mathkeyboard" android:versionCode="1" android:versionName="0.5">
+        <uses-sdk android:targetSdkVersion="17" android:minSdkVersion="16"/>
+    <application android:label="@string/ime_name"  android:allowBackup="true">
+        <service android:name="MathKeyboard"
                 android:permission="android.permission.BIND_INPUT_METHOD">
             <intent-filter>
                 <action android:name="android.view.InputMethod" />
@@ -10,7 +10,7 @@
             <meta-data android:name="android.view.im" android:resource="@xml/method" />
         </service>
 
-        <activity android:name=".ImePreferences" android:label="@string/settings_name">
+        <activity android:name="com.t2k.android.mathkeyboard.ImePreferences" android:label="@string/settings_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
             </intent-filter>

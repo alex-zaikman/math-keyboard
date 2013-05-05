@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-package com.example.android.softkeyboard;
+package com.t2k.android.mathkeyboard;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import com.android.inputmethodcommon.InputMethodSettingsFragment;
+import com.t2k.android.mathkeyboard.R;
 
 /**
  * Displays the IME preferences inside the input method setting.
