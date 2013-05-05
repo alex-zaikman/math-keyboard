@@ -56,9 +56,7 @@ public class MathKeyboard extends InputMethodService
     private InputMethodManager mInputMethodManager;
 
     private LatinKeyboardView mInputView;
- //   private CandidateView mCandidateView;
-//    private CompletionInfo[] mCompletions;
-    
+
     private StringBuilder mComposing = new StringBuilder();
     private int mLastDisplayWidth;
     private boolean mCapsLock;
