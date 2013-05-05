@@ -20,8 +20,7 @@
 <!-- The attributes in this XML file provide configuration information -->
 <!-- for the Search Manager. -->
 
-<input-method xmlns:android="http://schemas.android.com/apk/res/android"
-        android:settingsActivity="com.t2k.android.mathkeyboard.ImePreferences"
->
+<input-method xmlns:android="http://schemas.android.com/apk/res/android">
+    
 <subtype android:imeSubtypeMode="keyboard" android:icon="@drawable/sym_keyboard_space" android:imeSubtypeLocale="en_US" android:label="@string/label_subtype_generic"/>
 </input-method>

@@ -10,11 +10,5 @@
             <meta-data android:name="android.view.im" android:resource="@xml/method" />
         </service>
 
-        <activity android:name="com.t2k.android.mathkeyboard.ImePreferences" android:label="@string/settings_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-            </intent-filter>
-        </activity>
-
     </application>
 </manifest>
