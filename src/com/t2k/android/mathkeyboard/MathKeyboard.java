@@ -16,6 +16,9 @@
 
 package com.t2k.android.mathkeyboard; 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import android.inputmethodservice.InputMethodService;
 import android.inputmethodservice.Keyboard;
 import android.inputmethodservice.KeyboardView;
@@ -27,32 +30,10 @@ import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputMethodManager;
 import android.view.inputmethod.InputMethodSubtype;
 
-import java.util.ArrayList;
-import java.util.List;
 
-import com.t2k.android.mathkeyboard.R;
-
-/**
- * Example of writing an input method for a soft keyboard.  This code is
- * focused on simplicity over completeness, so it should in no way be considered
- * to be a complete soft keyboard implementation.  Its purpose is to provide
- * a basic example for how you would get started writing an input method, to
- * be fleshed out as appropriate.
- */
 public class MathKeyboard extends InputMethodService 
         implements KeyboardView.OnKeyboardActionListener {
-    static final boolean DEBUG = false;
-    
-    /** 
-     * This boolean indicates the optional example code for performing
-     * processing of hard keys in addition to regular text generation
-     * from on-screen interaction.  It would be used for input methods that
-     * perform language translations (such as converting text entered on 
-     * a QWERTY keyboard to Chinese), but may not be used for input methods
-     * that are primarily intended to be used for on-screen text entry.
-     */
-    static final boolean PROCESS_HARD_KEYS = true;
-
+   
     private InputMethodManager mInputMethodManager;
 
     private LatinKeyboardView mInputView;
@@ -71,8 +52,7 @@ public class MathKeyboard extends InputMethodService
     private String mWordSeparators;
     
     /**
-     * Main initialization of the input method component.  Be sure to call
-     * to super class.
+     * Main initialization of the input method component. 
      */
     @Override public void onCreate() {
         super.onCreate();
@@ -93,6 +73,8 @@ public class MathKeyboard extends InputMethodService
             if (displayWidth == mLastDisplayWidth) return;
             mLastDisplayWidth = displayWidth;
         }
+        
+        //if you need more "tabs" this is the place to start
         mQwertyKeyboard = new LatinKeyboard(this, R.xml.qwerty);
         mSymbolsKeyboard = new LatinKeyboard(this, R.xml.symbols);
         mSymbolsShiftedKeyboard = new LatinKeyboard(this, R.xml.symbols_shift);
@@ -209,7 +191,8 @@ public class MathKeyboard extends InputMethodService
     /**
      * Deal with the editor reporting movement of its cursor.
      */
-    @Override public void onUpdateSelection(int oldSelStart, int oldSelEnd,
+    @Override 
+    public void onUpdateSelection(int oldSelStart, int oldSelEnd,
             int newSelStart, int newSelEnd,
             int candidatesStart, int candidatesEnd) {
         super.onUpdateSelection(oldSelStart, oldSelEnd, newSelStart, newSelEnd,
@@ -235,7 +218,8 @@ public class MathKeyboard extends InputMethodService
      * We get first crack at them, and can either resume them or let them
      * continue to the app.
      */
-    @Override public boolean onKeyDown(int keyCode, KeyEvent event) {
+    @Override 
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
     	    	
         switch (keyCode) {		
             case KeyEvent.KEYCODE_BACK:
@@ -265,31 +249,7 @@ public class MathKeyboard extends InputMethodService
                 return false;
                 
             default:
-                // For all other keys, if we want to do transformations on
-                // text being entered with a hard keyboard, we need to process
-                // it and do the appropriate action.
-                if (PROCESS_HARD_KEYS) {
-                    if (keyCode == KeyEvent.KEYCODE_SPACE
-                            && (event.getMetaState()&KeyEvent.META_ALT_ON) != 0) {
-                        // A silly example: in our input method, Alt+Space
-                        // is a shortcut for 'android' in lower case.
-                        InputConnection ic = getCurrentInputConnection();
-                        if (ic != null) {
-                            // First, tell the editor that it is no longer in the
-                            // shift state, since we are consuming this.
-                            ic.clearMetaKeyStates(KeyEvent.META_ALT_ON);
-                            keyDownUp(KeyEvent.KEYCODE_A);
-                            keyDownUp(KeyEvent.KEYCODE_N);
-                            keyDownUp(KeyEvent.KEYCODE_D);
-                            keyDownUp(KeyEvent.KEYCODE_R);
-                            keyDownUp(KeyEvent.KEYCODE_O);
-                            keyDownUp(KeyEvent.KEYCODE_I);
-                            keyDownUp(KeyEvent.KEYCODE_D);
-                            // And we consume this event.
-                            return true;
-                        }
-                    }
-                }
+            	break;
         }
         
         return super.onKeyDown(keyCode, event);
@@ -371,7 +331,7 @@ public class MathKeyboard extends InputMethodService
         } else if (primaryCode == Keyboard.KEYCODE_CANCEL) {
             handleClose();
             return;
-        } else if (primaryCode == LatinKeyboardView.KEYCODE_OPTIONS) {
+        } else if (primaryCode == LatinKeyboardView.KEYCODE_OPTIONS) {//asz: I abuse the options keycode to raise the method picker
     		InputMethodManager ime = (InputMethodManager)getApplicationContext().getSystemService(INPUT_METHOD_SERVICE);
     		ime.showInputMethodPicker();
     		return;
@@ -502,9 +462,6 @@ public class MathKeyboard extends InputMethodService
         String separators = getWordSeparators();
         return separators.contains(String.valueOf((char)code));
     }
-
- 
-    
 
     
     public void swipeRight() {

@@ -34,7 +34,11 @@
              
         <Key android:codes="43" android:keyLabel="+" android:horizontalGap="3%p"/>
         <Key android:codes="45" android:keyLabel="-" />
-                  
+                  															     <!--TODO:dellete codes when android bug is fixed: 
+        																		 due to an android bug  keyOutputText and  keyIcon wont work when both present.
+      																		     A workaround is to also add codes android will still prefer keyOutputText over codes
+      																		     and for some magical reason it will work fine.-->  
+        
         <Key android:keyOutputText="power" android:codes="1111" android:keyIcon="@drawable/power" android:horizontalGap="3%p"/> <!-- TODO -->
         
         <Key android:codes="60" android:keyLabel="&lt;" android:horizontalGap="3%p"/>

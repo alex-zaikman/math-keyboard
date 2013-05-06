@@ -16,8 +16,6 @@
 
 package com.t2k.android.mathkeyboard;
 
-import com.t2k.android.mathkeyboard.R;
-
 import android.content.Context;
 import android.content.res.Resources;
 import android.content.res.XmlResourceParser;
