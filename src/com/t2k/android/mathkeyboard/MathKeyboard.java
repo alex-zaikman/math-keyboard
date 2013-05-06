@@ -127,16 +127,9 @@ public class MathKeyboard extends InputMethodService
                 break;
                 
             case InputType.TYPE_CLASS_TEXT:
-                // This is general text editing.  We will default to the
-                // normal alphabetic keyboard, and assume that we should
-                // be doing predictive text (showing candidates as the
-                // user types).
-                mCurKeyboard = mSymbolsKeyboard;  //asz:change this var to "mQwertyKeyboard" to open qwerty first
-                
-                // We also want to look at the current state of the editor
-                // to decide whether our alphabetic keyboard should start out
-                // shifted.
-                updateShiftKeyState(attribute);
+            	//asz:change mCurKeyboard to "mQwertyKeyboard" to open qwerty first
+            	//if so use  updateShiftKeyState(attribute); to decide the shift state
+                mCurKeyboard = mSymbolsKeyboard;             
                 break;
                 
             default:
@@ -210,8 +203,6 @@ public class MathKeyboard extends InputMethodService
             }
         }
     }
-
-    
    
     /**
      * Use this to monitor key events being delivered to the application.
@@ -282,8 +273,6 @@ public class MathKeyboard extends InputMethodService
             mInputView.setShifted(mCapsLock || caps != 0);
         }
     }
-    
-
     
     /**
      * Helper to send a key down / key up pair to the current editor.
