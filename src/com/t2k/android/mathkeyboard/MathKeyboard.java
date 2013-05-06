@@ -312,7 +312,7 @@ public class MathKeyboard extends InputMethodService
                 break;
         }
     }
-
+  
     // Implementation of KeyboardViewListener
 
     public void onKey(int primaryCode, int[] keyCodes) {
